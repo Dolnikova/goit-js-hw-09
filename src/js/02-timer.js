@@ -50,7 +50,7 @@ console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
 console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
 console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
-function addLeadingZero(value) {
+function pad(value) {
   return value.toString().padStart(2, '0');
 }
 
@@ -60,10 +60,10 @@ startBtn.addEventListener('click', () => {
     startBtn.disabled = true;
     if (countdown >= 0) {
       let timeObject = convertMs(countdown);
-      days.textContent = addLeadingZero(timeObject.days);
-      hours.textContent = addLeadingZero(timeObject.hours);
-      minutes.textContent = addLeadingZero(timeObject.minutes);
-      seconds.textContent = addLeadingZero(timeObject.seconds);
+      days.textContent = pad(timeObject.days);
+      hours.textContent = pad(timeObject.hours);
+      minutes.textContent = pad(timeObject.minutes);
+      seconds.textContent = pad(timeObject.seconds);
       if (countdown <= 10000) {
         timerHtml.style.color = 'tomato';
       }
