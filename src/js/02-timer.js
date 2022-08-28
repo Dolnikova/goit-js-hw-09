@@ -55,9 +55,10 @@ function pad(value) {
 }
 
 startBtn.addEventListener('click', () => {
+  startBtn.disabled = true;
   let timer = setInterval(() => {
+    input.disabled = true;
     let countdown = new Date(input.value) - new Date();
-    startBtn.disabled = true;
     if (countdown >= 0) {
       let timeObject = convertMs(countdown);
       days.textContent = pad(timeObject.days);
