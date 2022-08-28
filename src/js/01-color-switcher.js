@@ -10,6 +10,7 @@ startBtn.addEventListener('click', () => {
   timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
+  startBtn.disabled = true;
 });
 
 stopBtn.addEventListener('click', () => {
