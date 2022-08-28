@@ -5,9 +5,9 @@ const body = document.body;
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-
+let timerId = null;
 startBtn.addEventListener('click', () => {
-  const timerId = setInterval(() => {
+  timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
   startBtn.disabled = true;
